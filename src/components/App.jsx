@@ -33,7 +33,7 @@ import AdminCategories from './Pages/Admin/Categories'
 import AdminSettings from './Pages/Admin/Settings'
 
 const App = () => (
-  <Router basename="/lms">
+  <Router>
     
     <Switch>
       <Protected path="/" exact component={Home} />
