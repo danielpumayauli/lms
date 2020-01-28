@@ -1,0 +1,305 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Login */
+
+
+
+/* PreLoader */
+.loader{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: 99999;
+  transition: 1s;
+}
+.loader .span{
+  position: absolute;
+  transform: translate(-50%, 50%);
+  width: 60px; 
+  height: 60px;
+  top: 35%;
+  border: 5px solid #5E72E4;
+  z-index: 1;
+  animation: animar 2.5s linear infinite;
+}
+.loader .span:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #262626;
+  animation: animarbg 2.5s linear infinite;
+}
+
+@keyframes animar {
+    0% {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-50%, 50%) rotate(180deg);
+    }
+    50% {
+        transform: translate(-50%, 50%) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50%, 50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, 50%) rotate(360deg);
+    }
+}
+@keyframes animarbg {
+    0% {
+        height: 0;
+    }
+    25% {
+        height: 0;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+
+/*Para Aside Menu principal*/
+
+/*
+#wrapper {
+  padding-left: 70px;
+  transition: all .1s ease 0s;
+  height: 100%
+}
+
+#sidebar-wrapper {
+  margin-left: -150px;
+  left: 70px;
+  width: 150px;
+  background: #000000;
+  position: fixed;
+  height: 100%;
+  z-index: 10000;
+  transition: all .2s ease 0s;
+}
+
+.sidebar-nav {
+  display: block;
+  float: left;
+  width: 150px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#page-content-wrapper {
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
+  height: auto;
+}
+ #wrapper.active {
+  padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+  left: 150px;
+}
+
+
+#page-content-wrapper {
+width: 100%;
+}
+
+#sidebar_menu li a, .sidebar-nav li span {
+  display: block;
+  float: left;
+  text-decoration: none;
+  width: 150px;
+  background: #000000;
+  border-top: 1px solid #373737;
+  border-bottom: 1px solid #1A1A1A;
+  -webkit-transition: background .1s;
+  -moz-transition: background .1s;
+  -o-transition: background .1s;
+  -ms-transition: background .1s;
+  transition: background .1s;
+}
+.sidebar_name {
+  padding-top: 25px;
+  color: #fff;
+  opacity: .7;
+}
+
+.sidebar-nav li {
+line-height: 40px;
+text-indent: 20px;
+}
+
+.sidebar-nav li a {
+color: #fff !important;
+display: block;
+text-decoration: none;
+}
+
+.sidebar-nav li span:hover {
+color: #fff;
+background: rgba(255,255,255,0.2);
+text-decoration: none;
+}
+
+.sidebar-nav li span:active,
+.sidebar-nav li span:focus {
+text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+height: 65px;
+line-height: 60px;
+font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand span {
+color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand span:hover {
+color: #fff;
+background: none;
+}
+
+#main_icon
+{
+  float:right;
+ padding-right: 65px;
+ padding-top:20px;
+}
+.sub_icon
+{
+  float:right;
+ padding-right: 65px;
+ padding-top:10px;
+}
+.content-header {
+height: 65px;
+line-height: 65px;
+}
+
+.content-header h1 {
+margin: 0;
+margin-left: 20px;
+line-height: 65px;
+display: inline-block;
+}
+
+@media (max-width:767px) {
+    #wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+  }
+  #sidebar-wrapper {
+    left: 70px;
+  }
+  #wrapper.active {
+    padding-left: 150px;
+  }
+  #wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 150px;
+    transition: all .2s ease 0s;
+  }
+}
+
+*/
+
+/* personalización */
+.page-content {
+  padding: 0 5px
+}
+
+.course-name {
+  padding: 0 10px
+}
+
+h1 {
+  font-size: 1.8em !important;
+  line-height: 1.5;
+}
+
+#sidebar-wrapper .active {
+  background-color: darkslategray;
+}
+
+
+.accordion {
+  width: 100%;
+}
+
+/* Height auto */
+.h-auto {
+  height: auto;
+}
+
+/* Menu del curso */
+.course-menu > li .active {
+  font-weight: bolder;
+}
+
+.course-menu > li > a{
+  color: #525f7f;
+}
+
+
+/* Archivos del curso */
+
+.table-files {
+  font-size: .8rem;
+}
+.table-files td, .table-files th {
+  padding: 0.4rem;
+}
+.table-files tbody th{
+  cursor: pointer;
+}
+
+.table-files .file-row-icon {
+  font-size: 1rem;
+  margin: 0 5px;
+}
+
+.table-files .file-row-name {
+  font-weight: normal;
+}
+
+/* Visor de modulos */
+.accordion .card-header:after {
+  display: none;
+}
+
+.card-img-top{
+  max-height: 200px;
+}
+
+/* Selector de item de itinerario */
+.accordion .active{
+  /* color: red; */
+}
