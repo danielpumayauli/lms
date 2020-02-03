@@ -11,7 +11,7 @@ const CourseNavigation = ({id, options, is_student}) => {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-  console.log(options)
+  // console.log(options)
 
   return (
     <div id="course-sidebar" className="col-md-2 p-x-0 p-y-3">

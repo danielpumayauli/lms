@@ -69,6 +69,10 @@ const Module = ({match}) => {
     const element = e.target
     element.className = ['list-group-item active']    
 
+    choiceEmbeb(type,link)
+  }
+
+  const choiceEmbeb = (type, link) => {
     switch (type) {
       case 1:
         console.log('es link de youtube?: '+isYoutubeLink(link))
@@ -154,6 +158,17 @@ const Module = ({match}) => {
             
           </div>
   }
+
+  const primeraVista = () => {
+
+    console.log(module.items[0])
+    if(module.items.length === 0){
+      return <div><br/><br/>Sin contenido para mostrar</div>
+    }else{
+      choiceEmbeb(module.items[0].type, module.items[0].external_link)
+      // return JSON.stringify(module.items[0])
+    }
+  }
   
 
 
@@ -186,17 +201,15 @@ const Module = ({match}) => {
                 <div id="presentation" style={{textAlign: 'center'}}>
 
                   {
-                    view ? view : <div><br/><br/>Seleccione un elemento del lado derecho</div>
+                    view ? view : primeraVista()
                   }
 
 
                 {/* <object style={{width: 100+'%', minHeight: 500+'px'}}  
                     data="https://contenidoscev.usil.edu.pe/EPG/MBA-DG/metodos_cuantitativos/Unidad_1/Video_introductorio/MCN_UD1_Intro/story_html5.html">
-
                 </object> */}
                 {/* <object style={{width: 100+'%', minHeight: 500+'px'}}  
                     data="https://youtu.be/5EggK6AIVoc">
-
                 </object> */}
                 {/* <iframe width="560" height="315" src="//www.youtube.com/embed/5EggK6AIVoc" frameBorder="0" allowFullScreen></iframe> */}
                 {/* <iframe width="560" height="315" src="//www.youtube.com//FoP_mEKdy5Y" frameBorder="0" allowFullScreen></iframe> */}
@@ -217,9 +230,6 @@ const Module = ({match}) => {
       </div> : 
       <Loader />}
       </>
-
   )
 }
-
-
-export default  withLayout()(Module) 
+export default  withLayout()(Module)
