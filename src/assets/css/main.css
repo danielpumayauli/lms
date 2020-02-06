@@ -83,7 +83,7 @@ body{
 
 /* Para el tema del Tablero */
 
-/* @font-face {
+@font-face {
     font-family: 'icomoon';
     src:  url('../fonts/icomoon.eot?13zg1c');
     src:  url('../fonts/icomoon.eot?13zg1c#iefix') format('embedded-opentype'),
@@ -93,7 +93,7 @@ body{
     font-weight: normal;
     font-style: normal;
     font-display: block;
-  } */
+  }
   
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */

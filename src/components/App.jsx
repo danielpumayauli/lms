@@ -23,6 +23,8 @@ import Module from './Pages/Module'
 
 
 import Assignments from './Pages/Course/Assignments'
+import Videoconferences from './Pages/Course/Videoconferences'
+
 import Users from './Pages/Course/Users'
 import Files from './Pages/Course/Files'
 import Settings from './Pages/Course/Settings'
@@ -60,6 +62,7 @@ const App = () => (
       <Protected path="/courses/:id/wall" component={Wall} />
 
       <Protected path="/courses/:id/assignments" component={Assignments} />
+      <Protected path="/courses/:id/videoconferences" component={Videoconferences} />
       <Protected path="/courses/:id/users" component={Users} />
       <Protected path="/courses/:id/files" component={Files} />
       <Protected path="/courses/:id/settings" component={Settings} />
