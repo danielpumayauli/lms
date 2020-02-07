@@ -152,7 +152,7 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-9 login-picture" >
                     <div className="bg-login"></div>
                     <div className="overlay"></div>
                     <div className="cont-data-photographer">

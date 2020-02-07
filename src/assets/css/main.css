@@ -272,6 +272,13 @@ body{
   .paddtop{
     padding-top: 4px;
   }
+
+  @media (max-width:767px) {
+    .login-picture {
+      display: none;
+    }
+  }
+  
   
   
   

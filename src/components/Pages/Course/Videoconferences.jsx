@@ -22,10 +22,17 @@ const Videoconferences = ({match, name, options, is_student}) => {
         <div className="row">
           <CourseNavigation id={match.params.id} options={options} is_student={is_student}/>
           <div id="course-content" className="col-md-10 p-x-3 p-y-1">
-              <div className="content-title m-x-auto">
-                  Videoconferencias
+              
+              <div className="card" style={{minHeight: '500px'}}>
+                <div className="card-body">
+                  <h1>Videoconferencias</h1>
+                  <div className="px-5">
+                    <a href="https://zoom.us/rec/share/2-ZsN4Hh839IZrP9xRnbY6ECIYHGeaa8gHMW_KEFyE8EhATcakLMaf1NSnMewJIm?startTime=1580344275000" target="_blank" rel="noopener noreferrer">
+                      <i className="fa fa-video-camera" aria-hidden="true"></i> Sesión 29-01-2020  
+                    </a>
+                  </div>
+                </div>
               </div>
-              <p className="display-4">Videoconferencias del curso</p>
               
           </div>
         </div> 

@@ -136,6 +136,7 @@ const withLayout = (propValue) => (WrappedComponent) => {
         }
 
         render() {
+
             return (
                 <>
 
@@ -161,17 +162,20 @@ const withLayout = (propValue) => (WrappedComponent) => {
                                 <div className="collapse navbar-collapse" id="sidenav-collapse-main">
 
                                     <ul className="navbar-nav">
-                                        <li className="nav-item">
-                                        {/* <a className="nav-link" href="/admin">
-                                            <i className="fa fa-folder-open text-success"></i>
-                                            <span className="nav-link-text">Admin</span>
-                                        </a> */}
 
-                                        <NavLink className="nav-link" to='/admin' >
-                                            <i className="fa fa-folder-open text-success"></i>
-                                            <span className="nav-link-text">Admin</span>
-                                        </NavLink>
-                                        </li>
+                                        {
+                                            localStorage.getItem('student_status') === 'true'
+                                            ?
+                                            null
+                                            :
+                                            <li className="nav-item">                                        
+                                            <NavLink className="nav-link" to='/admin' >
+                                                <i className="fa fa-folder-open text-success"></i>
+                                                <span className="nav-link-text">Admin</span>
+                                            </NavLink>
+                                            </li> 
+                                        }
+                                        
 
                                         
                                         <li className="nav-item">
@@ -312,7 +316,7 @@ const withLayout = (propValue) => (WrappedComponent) => {
                                         <a className="nav-link pr-0" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <div className="media align-items-center">
                                                 <span className="avatar avatar-sm rounded-circle">
-                                                    <img src={require("../../assets/img/3.png")} alt="demo3" />
+                                                    <img src={require("../../assets/img/1.jpg")} alt="demo3" />
                                                 </span>
                                                 <div className="media-body ml-2 d-none d-lg-block">
                                                     <span className="mb-0 text-sm  font-weight-bold">Hola! {printFirstName()} <i className="fa fa-caret-down"></i></span>
