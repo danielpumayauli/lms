@@ -4,16 +4,16 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import Axios from 'axios';
 
-import Error from '../Pages/Course/Error';
+// import Error from '../Pages/Course/Error';
 
 
 
 
-const Table = ({head, body, is_student}) => {
+const Table = ({head, body}) => {
 
 
     const userId = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null
-    const [flag,cambiaFlag] = useState(body);
+    const [flag] = useState(body);
     const userFirstname = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).firstname : null
 
 
@@ -35,7 +35,7 @@ const Table = ({head, body, is_student}) => {
         }).then( async (result) => {
             if (result.value) {
                 try {
-                    const url = `http://159.89.88.142/api/courses/${course_id}/announcements/${id}`;
+                    const url = `http://167.172.221.228/api/courses/${course_id}/announcements/${id}`;
 
                     const resultado = await Axios.delete(url);
                     if(resultado.status === 200){
@@ -82,7 +82,7 @@ const Table = ({head, body, is_student}) => {
     const idDataRef = useRef('');
     
     // Mensaje de error para Editar
-    const [ errorvalidar, guardarError ] = useState(false);
+    const [ guardarError ] = useState(false);
     
     async function editWall(flag) {   
 
@@ -106,14 +106,13 @@ const Table = ({head, body, is_student}) => {
         privacy_state_id:1,
         reply_permission:1,
         dispatch_email:1,
-        editor_id: 3,
         visibility_author:flag,
         editor_id:userId
                
      }
  
     // Enviar el Request
-     const url = `http://159.89.88.142/api/courses/2/announcements/${newId}`;
+     const url = `http://167.172.221.228/api/courses/2/announcements/${newId}`;
 
      try {
          const resultado = await Axios.put(url, editWall);
@@ -152,8 +151,8 @@ const Table = ({head, body, is_student}) => {
             <div className="row align-items-center">
               <div className="col-auto">
                
-                <a href="#" class="avatar avatar-xl rounded-circle">
-                  <img alt="Image placeholder" src="https://scontent.flim14-1.fna.fbcdn.net/v/t1.0-9/10458338_620953564705720_8412713086015389626_n.jpg?_nc_cat=103&_nc_eui2=AeHoFsxF2kpVoa-t3CV98XG6ntM98MCH6B1OyLAryb2sSp7SnTt7v1Y_Z4R_t4uGcg4ikMhJS0PM_YWL93IIlWvIdnlVRqpl_34XeNaPnD5lRQ&_nc_oc=AQkhLhktDmkvgnDccJx7A9VglwxmTKPtKwSF4gE-DRJdPi8KCEOSkMxDI4ykg8nqQA8&_nc_ht=scontent.flim14-1.fna&oh=0dc35ff4dac6008221ce07e7f724c184&oe=5E440726" />
+                <a href="#!" className="avatar avatar-xl rounded-circle">
+                  <img alt="profile" src="https://scontent.flim14-1.fna.fbcdn.net/v/t1.0-9/10458338_620953564705720_8412713086015389626_n.jpg?_nc_cat=103&_nc_eui2=AeHoFsxF2kpVoa-t3CV98XG6ntM98MCH6B1OyLAryb2sSp7SnTt7v1Y_Z4R_t4uGcg4ikMhJS0PM_YWL93IIlWvIdnlVRqpl_34XeNaPnD5lRQ&_nc_oc=AQkhLhktDmkvgnDccJx7A9VglwxmTKPtKwSF4gE-DRJdPi8KCEOSkMxDI4ykg8nqQA8&_nc_ht=scontent.flim14-1.fna&oh=0dc35ff4dac6008221ce07e7f724c184&oe=5E440726" />
                 </a>
               </div>
 
@@ -162,26 +161,20 @@ const Table = ({head, body, is_student}) => {
                 { tr.visibility_author ? tr.author_fullname :'anónimo' } 
                 </h4>
                 <p className="text-sm text-muted mb-0">{ tr.description } </p>
+                
+                <small>
 
-                {
-                    !is_student ? 
-                    <small>
+                &nbsp; 
+               <a id="deleteComment" title="Eliminar"
+                 href="#!" onClick={() => deleteAnnouncement(tr.id,tr.course_id)}>Eliminar</a>
 
-                        &nbsp; 
-                        <a id="deleteComment" title="Eliminar"
-                        href="#" onClick={() => deleteAnnouncement(tr.id,tr.course_id)}>Eliminar</a>
-
-                                                                        &nbsp; 
-                        <a id="editComment" title="Editar"detailAnnouncement
-                        href="#" onClick={() => detailAnnouncement(tr.description,tr.id)}>Editar</a>
+                                                                &nbsp; 
+                <a id="editComment" title="Editar"
+                href="#!" onClick={() => detailAnnouncement(tr.description,tr.id)}>Editar</a>
+                                                    
                                                             
-                                                                    
 
-                    </small>
-                    : null
-                }
-                
-                
+                </small>
               </div>
             
             </div>

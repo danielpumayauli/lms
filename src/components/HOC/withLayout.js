@@ -26,6 +26,19 @@ const withLayout = (propValue) => (WrappedComponent) => {
             // console.log('init en el componentDidMount')
 
             $( document ).ready(function() {
+
+                function renderChatbotUsil(){
+                    
+                        $("#addClass").click(function () {
+                            $('#qnimate').addClass('popup-box-on');
+                        });
+                                  
+                        $("#removeClass").click(function () {
+                            $('#qnimate').removeClass('popup-box-on');
+                        });                          
+                }
+                renderChatbotUsil();
+
                 function addActive() {
                     $(".sidenav-toggler").addClass("active");
                     $(".sidenav-toggler").data("action", "sidenav-unpin"); 
@@ -350,7 +363,51 @@ const withLayout = (propValue) => (WrappedComponent) => {
 
 
                     </div>
+
+                    {/* Se agrega contenido de un chat flotante */}
                     
+                    <div className="chatbot-pluggin">
+                        <div className="throwsChat round hollow text-center">
+                            <a href="#!" id="addClass"><i className="fa fa-commenting-o" aria-hidden="true"></i> Ayuda </a>
+                        </div>
+
+                        <div className="popup-box chat-popup" id="qnimate">
+                            <div className="popup-head">
+                                <div className="popup-head-left pull-left">
+                                    <span style={{fontFamily: 'sans-serif'}}>USIL BOT</span>
+                                </div>
+                                <div className="popup-head-right pull-right">
+                                    <button data-widget="remove" id="removeClass" className="chat-header-button pull-right" type="button"><i className="fa fa-times" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                            <div className="popup-messages">			
+                            
+                                <div className="direct-chat-messages">                    
+                                        
+                                    <div className="chat-box-single-line d-none">
+                                        <abbr className="timestamp">Hoy</abbr>
+                                    </div>	
+                                    
+                                    <div className="direct-chat-msg doted-border">
+                                    <div className="direct-chat-info clearfix">
+                                        <span className="direct-chat-name pull-left">USIL BOT</span>
+                                    </div>
+                                    <img alt="message user" src="https://res.cloudinary.com/innovausil/image/upload/v1581097095/rubik/usil/logo_kcqyef.png" className="direct-chat-img"/>
+                                    <div className="direct-chat-text">
+                                        Bienvenido, en qué podemos ayudarte?
+                                    </div>
+                                    </div>                    
+
+                                </div>
+                            
+                            </div>
+
+                            <div className="popup-messages-footer">
+                                <textarea id="status_message" className="overflow-hidden" placeholder="¿Cómo podemos ayudarte?" rows="10" cols="40" name="message"></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
 
                 </>
             )
