@@ -44,17 +44,33 @@ const CourseCard = ({id, name, code, modules, image, professor}) => {
             </div>
             <div className="row">
                 <div className="col-md-12">
-                    <div className="progress-wrapper paddtop">
-                        <div className="progress-info">
-                        <span>Progreso</span>
-                        <div className="progress-percentage">
-                            <span>5%</span>
+                    {
+                        id === 3
+                        ?
+                        <div className="progress-wrapper paddtop">
+                            <div className="progress-info">
+                                <span>Progreso</span>
+                                <div className="progress-percentage">
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                            <div className="progress">
+                                <div className="progress-bar bg-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style={{width: 70+'%'}}></div>
+                            </div>
                         </div>
+                        :
+                        <div className="progress-wrapper paddtop">
+                            <div className="progress-info">
+                                <span>Progreso</span>
+                                <div className="progress-percentage">
+                                    <span>5%</span>
+                                </div>
+                            </div>
+                            <div className="progress">
+                                <div className="progress-bar bg-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style={{width: 5+'%'}}></div>
+                            </div>
                         </div>
-                        <div className="progress">
-                        <div className="progress-bar bg-info" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style={{width: 5+'%'}}></div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
             </div>
